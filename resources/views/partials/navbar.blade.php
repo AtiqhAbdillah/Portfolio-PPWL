@@ -1,7 +1,12 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/education">Education</a>
-</nav>
+<header>
+    <nav aria-label="Navigasi utama">
+        <a href="{{ route('home') }}">Portfolio</a>
+        |
+        <a href="{{ route('about') }}">Home</a>
+        |
+        <a href="{{ route('projects') }}">Projects</a>
+        |
+        <a href="{{ route('education') }}">Education</a>
+    </nav>
+</header>
 <hr>

@@ -1,3 +1,3 @@
 <footer>
-    @yield('footer', '&copy; 2026')
+    <p>&copy; 2026 Portfolio</p>
 </footer>

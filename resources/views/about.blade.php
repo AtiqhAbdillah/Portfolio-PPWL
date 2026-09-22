@@ -3,8 +3,8 @@
 @section('title', 'Home - Portfolio')
 
 @section('content')
-    <h1>Selamat Datang</h1>
-    <p>Ini adalah halaman about.</p>
+    <h1>Tentang saya</h1>
+    <p>Saya senang membangun pengalaman digital yang rapi, mudah digunakan, dan punya tujuan yang jelas.</p>
 @endsection
 
 @push('scripts')
