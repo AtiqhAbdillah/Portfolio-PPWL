@@ -5,6 +5,7 @@
 @section('content')
     <div class="container">
         <h1>Projects</h1>
+
         @forelse ($projects as $project)
             <article>
                 <h2><a href="{{ route('posts.show', $project) }}">{{ $project->title }}</a></h2>

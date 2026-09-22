@@ -24,13 +24,13 @@ class ProjectController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string'],
+            'title' => ['required', 'string', 'min:5', 'max:255'],
+            'description' => ['required', 'string', 'min:10'],
         ]);
 
         Project::create($validated);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Project berhasil ditambahkan.');
     }
 
     public function show(Project $project): View
@@ -46,8 +46,8 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project): RedirectResponse
     {
         $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string'],
+            'title' => ['required', 'string', 'min:5', 'max:255'],
+            'description' => ['required', 'string', 'min:10'],
         ]);
 
         $project->update($validated);
@@ -59,6 +59,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Project berhasil dihapus.');
     }
 }
