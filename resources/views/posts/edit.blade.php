@@ -17,6 +17,14 @@
             <textarea id="description" name="description" rows="5" required>{{ old('description', $project->description) }}</textarea>
             @error('description') <br>{{ $message }} @enderror
         </p>
+        <p>
+            <label for="status">Status</label><br>
+            <select id="status" name="status" required>
+                <option value="draft" @selected(old('status', $project->status) === 'draft')>Draft</option>
+                <option value="published" @selected(old('status', $project->status) === 'published')>Published</option>
+            </select>
+            @error('status') <br>{{ $message }} @enderror
+        </p>
         <button type="submit">Save</button>
         <a href="{{ route('posts.show', $project) }}">Cancel</a>
     </form>

@@ -14,6 +14,14 @@
             <textarea id="description" name="description" rows="5" required>{{ old('description') }}</textarea>
             @error('description') <br>{{ $message }} @enderror
         </p>
+        <p>
+            <label for="status">Status</label><br>
+            <select id="status" name="status" required>
+                <option value="draft" @selected(old('status', 'draft') === 'draft')>Draft</option>
+                <option value="published" @selected(old('status') === 'published')>Published</option>
+            </select>
+            @error('status') <br>{{ $message }} @enderror
+        </p>
         <button type="submit">Submit</button>
         <a href="{{ route('posts.index') }}">Cancel</a>
     </form>
