@@ -26,7 +26,8 @@
             <div class="project-card__actions">
                 <a href="{{ route('posts.show', $project) }}">View details</a>
                 <a href="{{ route('posts.edit', $project) }}">Edit</a>
-                <form method="POST" action="{{ route('posts.destroy', $project) }}" onsubmit="return confirm('Yakin ingin menghapus project ini?');">
+                <form method="POST" action="{{ route('posts.destroy', $project) }}" onsubmit="return confirm
+                ('Yakin ingin menghapus project ini?');">
                     @csrf
                     @method('DELETE')
                     <button class="button-link button-danger" type="submit">Delete</button>
